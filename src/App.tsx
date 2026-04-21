@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
+import { Analytics } from '@vercel/analytics/react';
 
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
@@ -56,6 +57,9 @@ function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
