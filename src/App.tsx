@@ -12,6 +12,7 @@ import ToolsStack from './components/ToolsStack';
 import SocialProofBar from './components/SocialProofBar';
 import BentoGrid from './components/BentoGrid';
 import Writing from './components/Writing';
+import HorizontalTicker from './components/HorizontalTicker';
 import Footer from './components/Footer';
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <BentoGrid />
         <SocialProofBar />
         <About />
+        <HorizontalTicker />
         <Timeline />
         <ToolsStack />
         <Writing />

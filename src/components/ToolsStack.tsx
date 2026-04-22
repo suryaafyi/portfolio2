@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Figma, Laptop, Code, Cpu, Database, Settings, Sparkles } from 'lucide-react';
+import { Figma, Code, Database, Palette, FlaskConical, Box, Waypoints, Asterisk } from 'lucide-react';
 
 const AdobeIcon = ({ size = 24 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -11,11 +11,13 @@ const AdobeIcon = ({ size = 24 }: { size?: number }) => (
 const tools = [
   { name: "Figma", desc: '"where ideas become real"', icon: Figma },
   { name: "Adobe Creative Suite", desc: '"the holy trinity: ps + ai + id"', icon: AdobeIcon },
+  { name: "Google Stitch", desc: '"AI design, right in the browser"', icon: FlaskConical },
+  { name: "Canva", desc: '"quick visuals, zero friction"', icon: Palette },
   { name: "React", desc: '"i can read your devs\' code"', icon: Code },
   { name: "Tailwind CSS", desc: '"design tokens but make it code"', icon: Database },
-  { name: "Notion", desc: '"where my brain lives"', icon: Cpu },
-  { name: "Maze / UT", desc: '"proving designs work"', icon: Settings },
-  { name: "Antigravity + Claude", desc: '"vibe coded this whole site 😭"', icon: Sparkles, isEasterEgg: true },
+  { name: "Notion", desc: '"where my brain lives"', icon: Box },
+  { name: "Maze / UT", desc: '"proving designs work"', icon: Waypoints },
+  { name: "Antigravity + Claude", desc: '"vibe coded this whole site 😭"', icon: Asterisk, isEasterEgg: true },
 ];
 
 const ToolsStack = () => {

@@ -187,10 +187,13 @@ const Hero = () => {
         >
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex gap-16 items-center flex-shrink-0">
-              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ PRODUCT DESIGN</span>
-              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ AI-FIRST EXPERIENCE</span>
-              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ DESIGN SYSTEMS</span>
-              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ FIGMA TO CODE</span>
+              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ UX Research</span>
+              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ Wireframeing & Prototyping</span>
+              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ AI First Design</span>
+              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ Interaction Design</span>
+              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ UI/UX</span>
+              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ Typography</span>
+              <span className="text-[12px] font-body uppercase tracking-[0.3em] font-bold text-text-primary/40">✦ Color Theory</span>
             </div>
           ))}
         </motion.div>

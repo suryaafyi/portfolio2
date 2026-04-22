@@ -41,7 +41,8 @@ const Footer = () => {
                 { name: 'LinkedIn', url: 'https://www.linkedin.com/in/surya-ux/' },
                 { name: 'Github', url: 'https://github.com/suryaafyi' },
                 { name: 'Behance', url: 'https://www.behance.net/suryaa-fyi' },
-                { name: 'Instagram', url: 'https://www.instagram.com/ft.surxaa' }
+                { name: 'Instagram', url: 'https://www.instagram.com/ft.surxaa' },
+                { name: 'Resume', url: 'https://roomy-wave-043.notion.site/Surya-Arunachalam-Resume-33c21faa3b208049897dfe969dc018b1' }
               ].map((social) => (
                 <a
                   key={social.name}
