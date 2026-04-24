@@ -14,6 +14,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: 'Work', href: '#work' },
     { name: 'About', href: '#about' },
@@ -23,8 +35,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${isScrolled ? 'py-4 bg-bg-primary/80 backdrop-blur-md border-b border-black/5' : 'py-8'
-        }`}
+      className={`fixed top-0 left-0 w-full transition-all duration-300 ${
+        isMobileMenuOpen 
+          ? 'z-[2000] h-[100dvh] bg-bg-primary' 
+          : `z-[1000] ${isScrolled ? 'py-4 bg-bg-primary/80 backdrop-blur-md border-b border-black/5' : 'py-8'}`
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
@@ -117,15 +132,6 @@ const Navbar = () => {
                   {link.name}.
                 </motion.a>
               ))}
-              <motion.a
-                href="#contact"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="mt-4 px-8 py-4 bg-accent-red text-white rounded-full font-body text-center text-[12px] uppercase tracking-[0.2em] font-bold"
-              >
-                Let's Talk
-              </motion.a>
             </div>
           </motion.div>
         )}
