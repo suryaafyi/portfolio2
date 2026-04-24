@@ -14,6 +14,7 @@ import BentoGrid from './components/BentoGrid';
 import Writing from './components/Writing';
 import HorizontalTicker from './components/HorizontalTicker';
 import Footer from './components/Footer';
+import MobileBanner from './components/MobileBanner';
 
 function App() {
   useLayoutEffect(() => {
@@ -44,6 +45,7 @@ function App() {
       {/* Global Utility Components */}
       <CustomCursor />
       <Navbar />
+      <MobileBanner />
 
       {/* Page Content */}
       <main>
