@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative bg-bg-primary text-text-primary selection:bg-accent-gold selection:text-bg-primary">
+    <div className="relative bg-bg-primary text-text-primary selection:bg-accent-gold selection:text-bg-primary overflow-x-clip">
       {/* Global Utility Components */}
       <CustomCursor />
       <Navbar />

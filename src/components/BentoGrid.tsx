@@ -92,7 +92,8 @@ const BentoGrid = () => {
     target: sectionRef,
   });
 
-  const x = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-100%"]);
+  const progress = useTransform(scrollYProgress, [0.1, 0.9], [0, 1]);
+  const x = useTransform(progress, (p) => `calc(${-p * 100}% + ${p * 100}vw)`);
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (latest) => {
@@ -103,10 +104,10 @@ const BentoGrid = () => {
 
   return (
     <section id="work" ref={sectionRef} className="relative h-[300vh] bg-bg-primary">
-      <div className="sticky top-0 h-screen flex flex-col justify-center items-start overflow-hidden px-6 lg:px-24">
+      <div className="sticky top-0 h-screen flex flex-col justify-center items-start overflow-hidden">
 
         {/* Section Header */}
-        <div className="mb-12 relative z-20">
+        <div className="mb-12 relative z-20 px-6 lg:px-24">
           <div className="font-body text-[11px] uppercase tracking-[0.4em] text-accent-red font-bold mb-4">Selected Work</div>
           <h2 className="text-6xl md:text-[clamp(4rem,9vw,11rem)] font-display text-text-primary leading-[0.9] lowercase tracking-tight">
             <span className="font-body font-bold">case</span> <span className="font-display italic">studies.</span>
@@ -138,7 +139,7 @@ const BentoGrid = () => {
           <motion.div
             ref={containerRef}
             style={{ x }}
-            className="flex gap-8 min-w-max"
+            className="flex gap-8 min-w-max pl-6 lg:pl-24 pr-6 lg:pr-24"
           >
             <div className="grid grid-cols-3 grid-rows-2 gap-8 h-[65vh] min-w-[140vw]">
               {projects.map((project) => (

@@ -32,18 +32,19 @@ const Timeline = () => {
     target: targetRef
   });
 
-  const x = useTransform(scrollYProgress, [0.05, 0.95], ["0%", "-75%"]);
+  const progress = useTransform(scrollYProgress, [0.05, 0.95], [0, 1]);
+  const x = useTransform(progress, (p) => `calc(${-p * 100}% + ${p * 100}vw)`);
 
   return (
     <section ref={targetRef} className="relative h-[500vh] bg-bg-primary">
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-visible">
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         <div className="container mx-auto px-6 mb-12">
           <div className="font-mono text-[11px] uppercase tracking-[0.4em] text-text-primary/40">THE JOURNEY</div>
         </div>
 
-        <motion.div style={{ x }} className="flex pl-16 pr-[780px] gap-32 items-center">
+        <motion.div style={{ x }} className="flex pl-6 md:pl-16 pr-6 md:pr-16 gap-12 md:gap-32 items-center w-max">
           {milestones.map((milestone, i) => (
-            <div key={i} className={`flex-shrink-0 ${i === milestones.length - 1 ? 'w-[780px]' : 'w-[550px]'} relative group`}>
+            <div key={i} className={`flex-shrink-0 ${i === milestones.length - 1 ? 'w-[85vw] md:w-[780px]' : 'w-[85vw] md:w-[550px]'} relative group`}>
               {/* Connecting Line */}
               {i !== milestones.length - 1 && (
                 <div className="absolute top-1/2 right-0 w-full h-[2px] bg-accent-red/20 translate-y-[-50%] translate-x-[50%] z-0" />

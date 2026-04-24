@@ -73,7 +73,7 @@ const Footer = () => {
           initial={{ y: '20%' }}
           whileInView={{ y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-[clamp(10rem,35vw,50rem)] font-display text-text-primary leading-[0.7] tracking-tighter whitespace-nowrap -mb-[0.1em]"
+          className="text-[clamp(10rem,35vw,50rem)] font-display text-text-primary leading-[0.60] tracking-tighter whitespace-nowrap pb-[0.01em]"
         >
           surya a.
         </motion.h2>
