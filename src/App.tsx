@@ -51,6 +51,9 @@ function App() {
       touchMultiplier: 2,
     });
 
+    // Expose lenis to window for programmatic scrolling on route change
+    (window as any).lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -60,6 +63,7 @@ function App() {
 
     return () => {
       lenis.destroy();
+      delete (window as any).lenis;
     };
   }, []);
 
@@ -81,10 +85,14 @@ function AppContent({
   handleSplashRevealMain,
   handleSplashComplete
 }: any) {
-  // Scroll to top on route change
+  // Scroll to top on route change using Lenis
   const location = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [location.pathname]);
 
   return (
