@@ -25,40 +25,40 @@ const categories: Category[] = [
     name: 'Books',
     aspectRatio: 'aspect-[2/3]',
     items: [
-      { id: 'b1', imageSrc: '/public/fav-things/verity.jpg', title: 'Verity', subtitle: 'COLLEEN HOOVER', gradientTint: 'from-blue-900 to-indigo-950', rotation: -2, backText: 'I love how this book messes with me. It makes me question what’s real, what’s written, and what people are capable of hiding. It’s uncomfortable in the best way.' },
-      { id: 'b2', imageSrc: '/public/fav-things/moby-dick.jpg', title: 'Moby-Dick', subtitle: 'HERMAN MELVILLE', gradientTint: 'from-orange-800 to-red-950', rotation: 1, backText: 'This isn’t just a story, it feels like being inside someone’s obsession. I’m drawn to how intense and consuming it is, like watching a mind slowly drift too far.' },
-      { id: 'b3', imageSrc: '/public/fav-things/wuthering-heights.jpg', title: 'Wuthering Heights', subtitle: 'EMILY BRONTË', gradientTint: 'from-neutral-800 to-neutral-950', rotation: -1, backText: 'I like that it doesn’t try to be beautiful. The emotions are messy, almost violent, and that honesty makes it feel real.' },
-      { id: 'b4', imageSrc: '/public/fav-things/a-song-of-ice-and-fire.jpg', title: 'A Song of Ice and Fire', subtitle: 'GEORGE R. R. MARTIN', gradientTint: 'from-teal-700 to-blue-900', rotation: 3, backText: 'I love how unpredictable it is. No one is safe, no choice is simple, and every action leaves a mark. It feels alive because of that.' },
+      { id: 'b1', imageSrc: '/fav-things/verity.jpg', title: 'Verity', subtitle: 'COLLEEN HOOVER', gradientTint: 'from-blue-900 to-indigo-950', rotation: -2, backText: 'I love how this book messes with me. It makes me question what’s real, what’s written, and what people are capable of hiding. It’s uncomfortable in the best way.' },
+      { id: 'b2', imageSrc: '/fav-things/moby-dick.jpg', title: 'Moby-Dick', subtitle: 'HERMAN MELVILLE', gradientTint: 'from-orange-800 to-red-950', rotation: 1, backText: 'This isn’t just a story, it feels like being inside someone’s obsession. I’m drawn to how intense and consuming it is, like watching a mind slowly drift too far.' },
+      { id: 'b3', imageSrc: '/fav-things/wuthering-heights.jpg', title: 'Wuthering Heights', subtitle: 'EMILY BRONTË', gradientTint: 'from-neutral-800 to-neutral-950', rotation: -1, backText: 'I like that it doesn’t try to be beautiful. The emotions are messy, almost violent, and that honesty makes it feel real.' },
+      { id: 'b4', imageSrc: '/fav-things/a-song-of-ice-and-fire.jpg', title: 'A Song of Ice and Fire', subtitle: 'GEORGE R. R. MARTIN', gradientTint: 'from-teal-700 to-blue-900', rotation: 3, backText: 'I love how unpredictable it is. No one is safe, no choice is simple, and every action leaves a mark. It feels alive because of that.' },
     ]
   },
   {
     name: 'Movies & Shows',
     aspectRatio: 'aspect-[2/3]',
     items: [
-      { id: 'm1', imageSrc: '/public/fav-things/interstellar.jpg', title: 'Interstellar', subtitle: 'CHRISTOPHER NOLAN', gradientTint: 'from-sky-500 to-blue-800', rotation: 0, backText: 'This one makes me feel small and emotional at the same time. It’s not just space, it’s about love, time, and how far we’re willing to go.' },
-      { id: 'm2', imageSrc: '/public/fav-things/game-of-thrones.jpg', title: 'Game of Thrones', subtitle: 'HBO', gradientTint: 'from-cyan-600 to-blue-800', rotation: -2, backText: 'I like how ruthless it is with its characters. It doesn’t protect anyone, and that makes every moment feel tense and real.' },
-      { id: 'm3', imageSrc: '/public/fav-things/wall-e.jpg', title: 'WALL·E', subtitle: 'PIXAR', gradientTint: 'from-amber-700 to-yellow-900', rotation: 1, backText: 'I love how it says so much without saying much at all. It’s simple on the surface, but it hits deeply.' },
-      { id: 'm4', imageSrc: '/public/fav-things/fight-club.jpg', title: 'Fight Club', subtitle: 'DAVID FINCHER', gradientTint: 'from-emerald-600 to-teal-800', rotation: 3, backText: '“The first rule of fight club is you do not talk about fight club.”' },
+      { id: 'm1', imageSrc: '/fav-things/interstellar.jpg', title: 'Interstellar', subtitle: 'CHRISTOPHER NOLAN', gradientTint: 'from-sky-500 to-blue-800', rotation: 0, backText: 'This one makes me feel small and emotional at the same time. It’s not just space, it’s about love, time, and how far we’re willing to go.' },
+      { id: 'm2', imageSrc: '/fav-things/game-of-thrones.jpg', title: 'Game of Thrones', subtitle: 'HBO', gradientTint: 'from-cyan-600 to-blue-800', rotation: -2, backText: 'I like how ruthless it is with its characters. It doesn’t protect anyone, and that makes every moment feel tense and real.' },
+      { id: 'm3', imageSrc: '/fav-things/wall-e.jpg', title: 'WALL·E', subtitle: 'PIXAR', gradientTint: 'from-amber-700 to-yellow-900', rotation: 1, backText: 'I love how it says so much without saying much at all. It’s simple on the surface, but it hits deeply.' },
+      { id: 'm4', imageSrc: '/fav-things/fight-club.jpg', title: 'Fight Club', subtitle: 'DAVID FINCHER', gradientTint: 'from-emerald-600 to-teal-800', rotation: 3, backText: '“The first rule of fight club is you do not talk about fight club.”' },
     ]
   },
   {
     name: 'Songs',
     aspectRatio: 'aspect-square',
     items: [
-      { id: 's1', imageSrc: '/public/fav-things/wildflower.jpg', title: 'Wildflower', subtitle: 'BILLIE EILISH', gradientTint: 'from-blue-600 to-indigo-800', rotation: -1, backText: 'It feels soft but heavy at the same time. Like something fragile carrying a lot of emotion underneath.' },
-      { id: 's2', imageSrc: '/public/fav-things/apocalypse.jpg', title: 'Apocalypse', subtitle: 'CIGARETTES AFTER SEX', gradientTint: 'from-zinc-800 to-black', rotation: 2, backText: 'This song feels like a memory. Distant, slow, and a little painful to hold onto.' },
-      { id: 's3', imageSrc: '/public/fav-things/like-him.jpg', title: 'Like Him', subtitle: 'TYLER, THE CREATOR', gradientTint: 'from-green-800 to-emerald-950', rotation: -2, backText: 'There’s something quiet and personal about it. It doesn’t try too hard, and that’s what makes it hit.' },
-      { id: 's4', imageSrc: '/public/fav-things/505.jpg', title: '505', subtitle: 'ARCTIC MONKEYS', gradientTint: 'from-blue-800 to-blue-950', rotation: 1, backText: 'I love how it builds. By the end, it feels like everything just spills out at once.' },
+      { id: 's1', imageSrc: '/fav-things/wildflower.jpg', title: 'Wildflower', subtitle: 'BILLIE EILISH', gradientTint: 'from-blue-600 to-indigo-800', rotation: -1, backText: 'It feels soft but heavy at the same time. Like something fragile carrying a lot of emotion underneath.' },
+      { id: 's2', imageSrc: '/fav-things/apocalypse.jpg', title: 'Apocalypse', subtitle: 'CIGARETTES AFTER SEX', gradientTint: 'from-zinc-800 to-black', rotation: 2, backText: 'This song feels like a memory. Distant, slow, and a little painful to hold onto.' },
+      { id: 's3', imageSrc: '/fav-things/like-him.jpg', title: 'Like Him', subtitle: 'TYLER, THE CREATOR', gradientTint: 'from-green-800 to-emerald-950', rotation: -2, backText: 'There’s something quiet and personal about it. It doesn’t try too hard, and that’s what makes it hit.' },
+      { id: 's4', imageSrc: '/fav-things/505.jpg', title: '505', subtitle: 'ARCTIC MONKEYS', gradientTint: 'from-blue-800 to-blue-950', rotation: 1, backText: 'I love how it builds. By the end, it feels like everything just spills out at once.' },
     ]
   },
   {
     name: 'Games',
     aspectRatio: 'aspect-[3/4]',
     items: [
-      { id: 'g1', imageSrc: '/public/fav-things/rdr2.jpg', title: 'Red Dead Redemption 2', subtitle: 'ROCKSTAR GAMES', gradientTint: 'from-neutral-200 to-neutral-400', rotation: 0, backText: 'It feels like I’m living inside the world, not just playing it. The story stays with me even after I’m done.' },
-      { id: 'g2', imageSrc: '/public/fav-things/farcry.jpg', title: 'Far Cry', subtitle: 'UBISOFT', gradientTint: 'from-neutral-800 to-neutral-950', rotation: -2, backText: 'I like the freedom it gives me. Every situation feels like mine to figure out.' },
-      { id: 'g3', imageSrc: '/public/fav-things/uncharted.jpg', title: 'Uncharted 4', subtitle: 'NAUGHTY DOG', gradientTint: 'from-orange-600 to-red-800', rotation: 1, backText: 'It feels like being part of an adventure movie, but with real emotion behind it.' },
-      { id: 'g4', imageSrc: '/public/fav-things/the-last-of-us.jpg', title: 'The Last of Us', subtitle: 'NAUGHTY DOG', gradientTint: 'from-red-800 to-red-950', rotation: 2, backText: 'This one stays heavy. It makes me think about people, choices, and what survival really means.' },
+      { id: 'g1', imageSrc: '/fav-things/rdr2.jpg', title: 'Red Dead Redemption 2', subtitle: 'ROCKSTAR GAMES', gradientTint: 'from-neutral-200 to-neutral-400', rotation: 0, backText: 'It feels like I’m living inside the world, not just playing it. The story stays with me even after I’m done.' },
+      { id: 'g2', imageSrc: '/fav-things/farcry.jpg', title: 'Far Cry', subtitle: 'UBISOFT', gradientTint: 'from-neutral-800 to-neutral-950', rotation: -2, backText: 'I like the freedom it gives me. Every situation feels like mine to figure out.' },
+      { id: 'g3', imageSrc: '/fav-things/uncharted.jpg', title: 'Uncharted 4', subtitle: 'NAUGHTY DOG', gradientTint: 'from-orange-600 to-red-800', rotation: 1, backText: 'It feels like being part of an adventure movie, but with real emotion behind it.' },
+      { id: 'g4', imageSrc: '/fav-things/the-last-of-us.jpg', title: 'The Last of Us', subtitle: 'NAUGHTY DOG', gradientTint: 'from-red-800 to-red-950', rotation: 2, backText: 'This one stays heavy. It makes me think about people, choices, and what survival really means.' },
     ]
   }
 ];

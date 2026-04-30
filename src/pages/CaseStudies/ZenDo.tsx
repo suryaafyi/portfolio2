@@ -125,14 +125,14 @@ export const ZenDoCaseStudy = () => {
       <SectionDivider />
 
       <SectionBlock id="ideate" label="IDEATE" heading="Transforming insights into structured solutions.">
-        <ImagePlaceholder color="#4ade80" caption="USER JOURNEY MAP" src="/public/case-studies/zendo-user-journey.png" />
+        <ImagePlaceholder color="#4ade80" caption="USER JOURNEY MAP" src="/case-studies/zendo-user-journey.png" />
       </SectionBlock>
 
       <SectionDivider />
 
       <SectionBlock id="prototype" label="PROTOTYPE" heading="From structure to screens.">
         <p>Low-fidelity wireframes were created to explore layout, structure, and user flows before moving into visual design.</p>
-        <ImagePlaceholder color="#4ade80" caption="WIREFRAME GRID" src="/public/case-studies/zendo-wireframes.png" />
+        <ImagePlaceholder color="#4ade80" caption="WIREFRAME GRID" src="/case-studies/zendo-wireframes.png" />
         <CalloutBlock>
           Iterating at low fidelity allowed us to discard heavy UI patterns and focus entirely on the spatial relationship between a user's task and their focus.
         </CalloutBlock>
@@ -142,7 +142,7 @@ export const ZenDoCaseStudy = () => {
 
       <SectionBlock id="visual-design" label="VISUAL DESIGN" heading="Designing for calm, clarity, and focus.">
         <p>The visual system is designed to reduce cognitive load, promote calmness, and support deep focus through minimal and intentional design choices.</p>
-        <ImagePlaceholder color="#4ade80" caption="UI DESIGN SYSTEM" src="/public/case-studies/zendo-ui.png" />
+        <ImagePlaceholder color="#4ade80" caption="UI DESIGN SYSTEM" src="/case-studies/zendo-ui.png" />
       </SectionBlock>
 
       <SectionDivider />

@@ -39,7 +39,7 @@ export const KnotCaseStudy = () => {
       }
       heroImageColor="#f0c060"
       heroImageCaption="KNOT APP MOCKUP"
-      heroImageSrc="/public/case-studies/knot-hero.png"
+      heroImageSrc="/case-studies/knot-hero.png"
       tocSections={tocSections}
     >
       <SectionBlock id="context" label="CONTEXT" heading="A private space for families to keep what matters.">
@@ -116,7 +116,7 @@ export const KnotCaseStudy = () => {
       <SectionDivider />
 
       <SectionBlock id="ideate" label="IDEATE" heading="Exploring solutions and shaping the family experience.">
-        <ImagePlaceholder color="#f0c060" caption="USER JOURNEY" src="/public/case-studies/knot-user-journey.png" />
+        <ImagePlaceholder color="#f0c060" caption="USER JOURNEY" src="/case-studies/knot-user-journey.png" />
         <h4 className="font-mono text-sm tracking-widest uppercase mt-12 mb-6">Strategic Design Decisions</h4>
         <div className="space-y-4">
           {[
@@ -137,7 +137,7 @@ export const KnotCaseStudy = () => {
 
       <SectionBlock id="wireframes" label="WIREFRAMES" heading="Starting with pen, not pixels.">
         <p>Before structure and polish, ideas were explored quickly — focusing on flows, relationships, and how memories should feel.</p>
-        <ImagePlaceholder color="#f0c060" caption="WIREFRAME FLOWS" src="/public/case-studies/knot-wireframes.png" />
+        <ImagePlaceholder color="#f0c060" caption="WIREFRAME FLOWS" src="/case-studies/knot-wireframes.png" />
         <CalloutBlock>
           Clarity over complexity. Every screen had a purpose.
         </CalloutBlock>
@@ -147,7 +147,7 @@ export const KnotCaseStudy = () => {
 
       <SectionBlock id="visual-design" label="VISUAL DESIGN" heading="A system designed to feel calm, personal, and expressive.">
         <p>Soft tones, thoughtful typography, and subtle depth create an experience that feels intimate — not overwhelming.</p>
-        <ImagePlaceholder color="#f0c060" caption="UI DESIGN SCREENS" src="/public/case-studies/knot-ui.png" />
+        <ImagePlaceholder color="#f0c060" caption="UI DESIGN SCREENS" src="/case-studies/knot-ui.png" />
       </SectionBlock>
 
       <SectionDivider />
