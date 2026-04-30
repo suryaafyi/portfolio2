@@ -66,7 +66,7 @@ const CustomCursor = () => {
 
       {/* Main Cursor Dot */}
       <motion.div
-        className={`fixed top-0 left-0 w-3 h-3 rounded-full pointer-events-none z-[9999] flex items-center justify-center transition-colors duration-300 ${
+        className={`fixed top-0 left-0 w-4 h-4 rounded-full pointer-events-none z-[9999] flex items-center justify-center transition-colors duration-300 ${
           hoverState !== 'default' ? 'bg-white mix-blend-difference' : 'bg-[#e8432d]'
         }`}
         style={{
@@ -75,6 +75,7 @@ const CustomCursor = () => {
           translateX: '-50%',
           translateY: '-50%',
           scale: hoverState === 'hover' ? 2.5 : hoverState === 'view' ? 8 : 1,
+          boxShadow: hoverState === 'default' ? '0 0 6px rgba(232,67,45,0.4)' : 'none',
         }}
       >
         {hoverState === 'view' && (

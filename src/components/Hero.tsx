@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const ScrambleText = ({ text }: { text: string }) => {
+const ScrambleText = ({ text, startAnimation = true }: { text: string, startAnimation?: boolean }) => {
   const [displayText, setDisplayText] = useState(text);
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+';
 
   useEffect(() => {
+    if (!startAnimation) return;
+
     let iterations = 0;
     const interval = setInterval(() => {
       setDisplayText(prev =>
@@ -20,12 +22,12 @@ const ScrambleText = ({ text }: { text: string }) => {
     }, 30);
 
     return () => clearInterval(interval);
-  }, [text]);
+  }, [text, startAnimation]);
 
   return <span className="font-display">{displayText}</span>;
 };
 
-const Hero = () => {
+const Hero = ({ splashDonePhase = true }: { splashDonePhase?: boolean }) => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-16 overflow-hidden">
       {/* Floating Doodles */}
@@ -90,7 +92,7 @@ const Hero = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
             >
-              <ScrambleText text="surya a." />
+              <ScrambleText text="surya a." startAnimation={splashDonePhase} />
             </motion.div>
           </div>
 

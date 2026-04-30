@@ -1,22 +1,45 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 import { Analytics } from '@vercel/analytics/react';
-
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Timeline from './components/Timeline';
-import ToolsStack from './components/ToolsStack';
-import SocialProofBar from './components/SocialProofBar';
-import BentoGrid from './components/BentoGrid';
-import Writing from './components/Writing';
-import HorizontalTicker from './components/HorizontalTicker';
-import Footer from './components/Footer';
 import MobileBanner from './components/MobileBanner';
+import SplashScreen from './components/SplashScreen';
+import Home from './pages/Home';
+import { ShiftCaseStudy } from './pages/CaseStudies/Shift';
+import { KnotCaseStudy } from './pages/CaseStudies/Knot';
+import { ZenDoCaseStudy } from './pages/CaseStudies/ZenDo';
 
 function App() {
+  const [showSplash, setShowSplash] = useState(false);
+  const [splashDonePhase, setSplashDonePhase] = useState(false);
+
+  useEffect(() => {
+    const entries = window.performance.getEntriesByType('navigation');
+    const isReload = entries.length > 0 && (entries[0] as PerformanceNavigationTiming).type === 'reload';
+
+    if (isReload) {
+      sessionStorage.removeItem('splashShown');
+    }
+
+    const hasSeenSplash = sessionStorage.getItem('splashShown');
+    if (!hasSeenSplash) {
+      setShowSplash(true);
+    } else {
+      setSplashDonePhase(true);
+    }
+  }, []);
+
+  const handleSplashRevealMain = () => {
+    setSplashDonePhase(true);
+  };
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+    sessionStorage.setItem('splashShown', 'true');
+  };
   useLayoutEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -41,26 +64,56 @@ function App() {
   }, []);
 
   return (
+    <Router>
+      <AppContent
+        showSplash={showSplash}
+        splashDonePhase={splashDonePhase}
+        handleSplashRevealMain={handleSplashRevealMain}
+        handleSplashComplete={handleSplashComplete}
+      />
+    </Router>
+  );
+}
+
+function AppContent({
+  showSplash,
+  splashDonePhase,
+  handleSplashRevealMain,
+  handleSplashComplete
+}: any) {
+  // Scroll to top on route change
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return (
     <div className="relative bg-bg-primary text-text-primary selection:bg-accent-gold selection:text-bg-primary overflow-x-clip">
-      {/* Global Utility Components */}
-      <CustomCursor />
-      <Navbar />
-      <MobileBanner />
+      {showSplash && (
+        <SplashScreen
+          onRevealMain={handleSplashRevealMain}
+          onComplete={handleSplashComplete}
+        />
+      )}
 
-      {/* Page Content */}
-      <main>
-        <Hero />
-        <BentoGrid />
-        <SocialProofBar />
-        <About />
-        <HorizontalTicker />
-        <Timeline />
-        <ToolsStack />
-        <Writing />
-      </main>
+      {/* Main Content Wrapper - Fades in after splash */}
+      <div
+        className={`relative z-[110] transition-opacity duration-400 ease-in-out ${splashDonePhase ? 'opacity-100' : 'opacity-0'
+          }`}
+      >
+        {/* Global Utility Components */}
+        <CustomCursor />
+        <Navbar />
+        <MobileBanner />
 
-      {/* Footer */}
-      <Footer />
+        {/* Page Content Routes */}
+        <Routes>
+          <Route path="/" element={<Home splashDonePhase={splashDonePhase} />} />
+          <Route path="/work/shift" element={<ShiftCaseStudy />} />
+          <Route path="/work/knot" element={<KnotCaseStudy />} />
+          <Route path="/work/zendo" element={<ZenDoCaseStudy />} />
+        </Routes>
+      </div>
 
       {/* Vercel Web Analytics */}
       <Analytics />

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
@@ -7,7 +8,7 @@ const projects = [
     title: 'SHIFT',
     description: 'A Career Transition Platform | UX Case Study',
     tags: ['UX Research', 'Product Design', 'Figma'],
-    link: 'https://www.behance.net/gallery/245704505/Shift-A-Career-Transition-Platform-UX-Case-Study',
+    link: '/work/shift',
     color: '#4060ff',
     className: 'col-span-2'
   },
@@ -16,16 +17,16 @@ const projects = [
     title: 'KNOT',
     description: 'Where Moments Became Memories | UX/UI Case Study',
     tags: ['UI Design', 'Motion', 'Figma'],
-    link: 'https://www.behance.net/gallery/247113621/knot-Where-Moments-Became-Memories-UXUI-Case-study',
+    link: '/work/knot',
     color: '#f0c060',
     className: 'row-span-2'
   },
   {
     id: 'zendo',
-    title: 'ZEN·DO',
+    title: 'ZEN DO',
     description: 'A Mindful Productivity App | UI/UX Case Study',
     tags: ['UX Research', 'UI Design', 'Productivity'],
-    link: 'https://www.behance.net/gallery/246285297/Zen-do-A-Mindful-Productivity-App-UIUX-Case-Study',
+    link: '/work/zendo',
     color: '#4ade80',
     className: 'col-span-1'
   },
@@ -41,11 +42,12 @@ const projects = [
 ];
 
 const CaseStudyCard = ({ project }: { project: typeof projects[0] }) => {
+  const isExternal = project.link.startsWith('http');
+  const Component = isExternal ? motion.a : motion(Link);
+
   return (
-    <motion.a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Component
+      {...(isExternal ? { href: project.link, target: '_blank', rel: 'noopener noreferrer' } : { to: project.link })}
       data-cursor="view"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -79,7 +81,7 @@ const CaseStudyCard = ({ project }: { project: typeof projects[0] }) => {
           ↗
         </div>
       </div>
-    </motion.a>
+    </Component>
   );
 };
 
